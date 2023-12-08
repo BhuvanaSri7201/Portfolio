@@ -1,0 +1,18 @@
+---
+title: "Bhuvana Sri Andapally"
+image: img.jpg
+about:
+  template: jolla
+  links:
+    - icon: email
+      text: EMail
+      href: https://outlook.office.com/mail/deeplink/compose?mailtouri=mailto%3Aandapallybhuvanasri%40my.unt.edu 
+    - icon: github
+      text: Github
+      href: https://github.com/BhuvanaSri7201
+    - icon: resume
+      text: Resume
+      href: https://drive.google.com/file/d/1xG6RIx47WrTPi2WC-z2hHAcNSIvmT8XN/view?usp=sharing
+---
+
+Hi. This is Bhuvana Sri Andapally from India. I completed my undergraduate at Osmania University in Hyderabad, India in Computer science a Bachelor of Science (B.Sc.) with a concentration in Statistics and Computer Science. Currently, I am pursuing my master's at the University of North Texas in Advanced Data Analytics. I like the topics related to mathematics problems that can be solved through statistical concepts and also computer science where understanding the question drawing suitable algorithm and then processing it in coding where the result without errors is the happiest thing ever that could be for me.

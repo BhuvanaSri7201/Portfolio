@@ -1,0 +1,58 @@
+[
+  {
+    "objectID": "Home.html",
+    "href": "Home.html",
+    "title": "Bhuvana Sri Andapally",
+    "section": "",
+    "text": "Hi. This is Bhuvana Sri Andapally from India. I completed my undergraduate at Osmania University in Hyderabad, India in Computer science a Bachelor of Science (B.Sc.) with a concentration in Statistics and Computer Science. Currently, I am pursuing my master’s at the University of North Texas in Advanced Data Analytics. I like the topics related to mathematics problems that can be solved through statistical concepts and also computer science where understanding the question drawing suitable algorithm and then processing it in coding where the result without errors is the happiest thing ever that could be for me."
+  },
+  {
+    "objectID": "Blog.html",
+    "href": "Blog.html",
+    "title": "Blog",
+    "section": "",
+    "text": "Linear regression is a powerful statistical method used for modeling the relationship between a dependent variable and one or more independent variables. In this blog post, we’ll explore the basics of linear regression using the mtcars dataset in R, aiming to predict a car’s miles per gallon (mpg) based on various features.\n\n\nOur goal is to understand the factors influencing a car’s fuel efficiency. The mtcars dataset is a classic dataset in R, containing various attributes of 32 different car models from the 1970s. We want to predict mpg based on other variables such as horsepower (hp), weight (wt), and number of cylinders (cyl).\n\n\n\nLet’s start by loading the dataset and taking a quick look at its structure.\n\n# Load mtcars dataset\ndata(mtcars)\n\n# Display the first few rows of the dataset\nhead(mtcars)\n\n                   mpg cyl disp  hp drat    wt  qsec vs am gear carb\nMazda RX4         21.0   6  160 110 3.90 2.620 16.46  0  1    4    4\nMazda RX4 Wag     21.0   6  160 110 3.90 2.875 17.02  0  1    4    4\nDatsun 710        22.8   4  108  93 3.85 2.320 18.61  1  1    4    1\nHornet 4 Drive    21.4   6  258 110 3.08 3.215 19.44  1  0    3    1\nHornet Sportabout 18.7   8  360 175 3.15 3.440 17.02  0  0    3    2\nValiant           18.1   6  225 105 2.76 3.460 20.22  1  0    3    1\n\n\nThis gives us an overview of the data and helps us identify potential predictors for our linear regression model.\n\n\n\nVisualization is a crucial step in understanding relationships between variables. Let’s create a scatter plot matrix to visualize the relationships between mpg, hp, wt, and cyl.\n\n# Create a scatter plot matrix\npairs(mtcars[, c(\"mpg\", \"hp\", \"wt\", \"cyl\")], main=\"Scatterplot Matrix\")\n\n\n\n\nThis scatter plot matrix helps us identify potential linear relationships between mpg and other variables.\n\n\n\nNow, let’s build a linear regression model using the selected predictors.\n\n# Build the linear regression model\nmodel &lt;- lm(mpg ~ hp + wt + cyl, data = mtcars)\n\n# Display a summary of the model\nsummary(model)\n\n\nCall:\nlm(formula = mpg ~ hp + wt + cyl, data = mtcars)\n\nResiduals:\n    Min      1Q  Median      3Q     Max \n-3.9290 -1.5598 -0.5311  1.1850  5.8986 \n\nCoefficients:\n            Estimate Std. Error t value Pr(&gt;|t|)    \n(Intercept) 38.75179    1.78686  21.687  &lt; 2e-16 ***\nhp          -0.01804    0.01188  -1.519 0.140015    \nwt          -3.16697    0.74058  -4.276 0.000199 ***\ncyl         -0.94162    0.55092  -1.709 0.098480 .  \n---\nSignif. codes:  0 '***' 0.001 '**' 0.01 '*' 0.05 '.' 0.1 ' ' 1\n\nResidual standard error: 2.512 on 28 degrees of freedom\nMultiple R-squared:  0.8431,    Adjusted R-squared:  0.8263 \nF-statistic: 50.17 on 3 and 28 DF,  p-value: 2.184e-11\n\n\nThe summary provides information about coefficients, significance levels, and the overall fit of the model.\n\n\n\nIt’s essential to assess the model’s performance. We can use diagnostic plots to check for assumptions like homoscedasticity and normality of residuals.\n\n# Create diagnostic plots\npar(mfrow=c(2,2))\nplot(model)\n\n\n\n\nConclusion\nIn this blog post, we delved into linear regression using the mtcars dataset in R. We explored data, visualized relationships, built a model, and evaluated its performance. Linear regression serves as a powerful tool for predicting outcomes based on identified predictors."
+  },
+  {
+    "objectID": "Blog.html#the-problem",
+    "href": "Blog.html#the-problem",
+    "title": "Blog",
+    "section": "",
+    "text": "Our goal is to understand the factors influencing a car’s fuel efficiency. The mtcars dataset is a classic dataset in R, containing various attributes of 32 different car models from the 1970s. We want to predict mpg based on other variables such as horsepower (hp), weight (wt), and number of cylinders (cyl)."
+  },
+  {
+    "objectID": "Blog.html#data-exploration",
+    "href": "Blog.html#data-exploration",
+    "title": "Blog",
+    "section": "",
+    "text": "Let’s start by loading the dataset and taking a quick look at its structure.\n\n# Load mtcars dataset\ndata(mtcars)\n\n# Display the first few rows of the dataset\nhead(mtcars)\n\n                   mpg cyl disp  hp drat    wt  qsec vs am gear carb\nMazda RX4         21.0   6  160 110 3.90 2.620 16.46  0  1    4    4\nMazda RX4 Wag     21.0   6  160 110 3.90 2.875 17.02  0  1    4    4\nDatsun 710        22.8   4  108  93 3.85 2.320 18.61  1  1    4    1\nHornet 4 Drive    21.4   6  258 110 3.08 3.215 19.44  1  0    3    1\nHornet Sportabout 18.7   8  360 175 3.15 3.440 17.02  0  0    3    2\nValiant           18.1   6  225 105 2.76 3.460 20.22  1  0    3    1\n\n\nThis gives us an overview of the data and helps us identify potential predictors for our linear regression model."
+  },
+  {
+    "objectID": "Blog.html#data-visualization",
+    "href": "Blog.html#data-visualization",
+    "title": "Blog",
+    "section": "",
+    "text": "Visualization is a crucial step in understanding relationships between variables. Let’s create a scatter plot matrix to visualize the relationships between mpg, hp, wt, and cyl.\n\n# Create a scatter plot matrix\npairs(mtcars[, c(\"mpg\", \"hp\", \"wt\", \"cyl\")], main=\"Scatterplot Matrix\")\n\n\n\n\nThis scatter plot matrix helps us identify potential linear relationships between mpg and other variables."
+  },
+  {
+    "objectID": "Blog.html#building-the-linear-regression-model",
+    "href": "Blog.html#building-the-linear-regression-model",
+    "title": "Blog",
+    "section": "",
+    "text": "Now, let’s build a linear regression model using the selected predictors.\n\n# Build the linear regression model\nmodel &lt;- lm(mpg ~ hp + wt + cyl, data = mtcars)\n\n# Display a summary of the model\nsummary(model)\n\n\nCall:\nlm(formula = mpg ~ hp + wt + cyl, data = mtcars)\n\nResiduals:\n    Min      1Q  Median      3Q     Max \n-3.9290 -1.5598 -0.5311  1.1850  5.8986 \n\nCoefficients:\n            Estimate Std. Error t value Pr(&gt;|t|)    \n(Intercept) 38.75179    1.78686  21.687  &lt; 2e-16 ***\nhp          -0.01804    0.01188  -1.519 0.140015    \nwt          -3.16697    0.74058  -4.276 0.000199 ***\ncyl         -0.94162    0.55092  -1.709 0.098480 .  \n---\nSignif. codes:  0 '***' 0.001 '**' 0.01 '*' 0.05 '.' 0.1 ' ' 1\n\nResidual standard error: 2.512 on 28 degrees of freedom\nMultiple R-squared:  0.8431,    Adjusted R-squared:  0.8263 \nF-statistic: 50.17 on 3 and 28 DF,  p-value: 2.184e-11\n\n\nThe summary provides information about coefficients, significance levels, and the overall fit of the model."
+  },
+  {
+    "objectID": "Blog.html#model-evaluation",
+    "href": "Blog.html#model-evaluation",
+    "title": "Blog",
+    "section": "",
+    "text": "It’s essential to assess the model’s performance. We can use diagnostic plots to check for assumptions like homoscedasticity and normality of residuals.\n\n# Create diagnostic plots\npar(mfrow=c(2,2))\nplot(model)\n\n\n\n\nConclusion\nIn this blog post, we delved into linear regression using the mtcars dataset in R. We explored data, visualized relationships, built a model, and evaluated its performance. Linear regression serves as a powerful tool for predicting outcomes based on identified predictors."
+  },
+  {
+    "objectID": "index.html",
+    "href": "index.html",
+    "title": "Portfolio",
+    "section": "",
+    "text": "Blog\n\n\n\n\n\n\n\n\n\n\n\n\nDec 7, 2023\n\n\nBhuvana Sri Andapally\n\n\n\n\n\n\nNo matching items"
+  }
+]

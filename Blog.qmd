@@ -1,0 +1,73 @@
+---
+title: "Blog"
+author: Bhuvana Sri Andapally
+date: 12-07-2023
+image: "lr.jpg"
+---
+
+# **Understanding Linear Regression with mtcars Dataset**
+
+Linear regression is a powerful statistical method used for modeling the relationship between a dependent variable and one or more independent variables. In this blog post, we'll explore the basics of linear regression using the **`mtcars`** dataset in R, aiming to predict a car's miles per gallon (**`mpg`**) based on various features.
+
+## **The Problem**
+
+Our goal is to understand the factors influencing a car's fuel efficiency. The **`mtcars`** dataset is a classic dataset in R, containing various attributes of 32 different car models from the 1970s. We want to predict **`mpg`** based on other variables such as horsepower (**`hp`**), weight (**`wt`**), and number of cylinders (**`cyl`**).
+
+## **Data Exploration**
+
+Let's start by loading the dataset and taking a quick look at its structure.
+
+```{r}
+# Load mtcars dataset
+data(mtcars)
+
+# Display the first few rows of the dataset
+head(mtcars)
+
+```
+
+This gives us an overview of the data and helps us identify potential predictors for our linear regression model.
+
+## **Data Visualization**
+
+Visualization is a crucial step in understanding relationships between variables. Let's create a scatter plot matrix to visualize the relationships between **`mpg`**, **`hp`**, **`wt`**, and **`cyl`**.
+
+```{r}
+
+# Create a scatter plot matrix
+pairs(mtcars[, c("mpg", "hp", "wt", "cyl")], main="Scatterplot Matrix")
+
+```
+
+This scatter plot matrix helps us identify potential linear relationships between **`mpg`** and other variables.
+
+## **Building the Linear Regression Model**
+
+Now, let's build a linear regression model using the selected predictors.
+
+```{r}
+# Build the linear regression model
+model <- lm(mpg ~ hp + wt + cyl, data = mtcars)
+
+# Display a summary of the model
+summary(model)
+
+```
+
+The summary provides information about coefficients, significance levels, and the overall fit of the model.
+
+## **Model Evaluation**
+
+It's essential to assess the model's performance. We can use diagnostic plots to check for assumptions like homoscedasticity and normality of residuals.
+
+```{r}
+
+# Create diagnostic plots
+par(mfrow=c(2,2))
+plot(model)
+
+```
+
+**Conclusion**
+
+In this blog post, we delved into linear regression using the **`mtcars`** dataset in R. We explored data, visualized relationships, built a model, and evaluated its performance. Linear regression serves as a powerful tool for predicting outcomes based on identified predictors.

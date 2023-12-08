@@ -1,0 +1,9 @@
+---
+title: "Resume"
+about:
+  template: jolla
+  links:
+    - icon: download
+      text: Download
+      href: https://drive.google.com/file/d/1xG6RIx47WrTPi2WC-z2hHAcNSIvmT8XN/view?usp=sharing
+---
